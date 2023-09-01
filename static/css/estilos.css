@@ -1,0 +1,284 @@
+html{
+    height: 100%;
+
+}
+body{
+    min-height: 100%;
+    
+}
+  
+  .header {
+
+    grid-area: header;
+    
+
+}
+
+.nav-bar
+{
+    grid-area: nav-bar;
+    background-color: rgb(245, 2, 2);
+}
+
+.sidebar
+{
+    grid-area: sidebar;
+    background-color: chartreuse;
+}
+
+.main
+{
+    grid-area: main;
+    background-color: coral;
+}
+.footer
+{
+    grid-area: footer;
+    background-color: mediumslateblue;
+
+}
+
+
+.mainformulario
+{
+  display: flex;
+
+   
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 490px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    
+  }
+  
+  .title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message, .signin {
+    color: rgba(48, 43, 43, 0.822);
+    font-size: 14px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: royalblue;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 90%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: rgb(231, 10, 10);
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+
+
+/* INICIO ESTILO NOSOTROS MISION Y VISION */
+
+.bodymision
+{
+background-image: url("/static/img/mision.gif");
+
+}
+
+.bodyvision
+{
+background-image: url("/static/img/vision.gif");
+
+}
+.bodyregistrar{
+  background-image: url("/static/img/registrate.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+/* Contenedor principal */
+.mainnosotros {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* Cambia el color de fondo del contenedor según tu preferencia */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  border-radius: 5px;
+}
+
+/* Título */
+h1 {
+  font-size: 24px;
+  color: #333; /* Cambia el color del texto del título según tu preferencia */
+  margin-bottom: 20px;
+}
+
+/* Párrafos de texto */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555; /* Cambia el color del texto del párrafo según tu preferencia */
+  margin-bottom: 15px;
+}
+
+/* Enlaces */
+a {
+  color: #007BFF; /* Cambia el color de los enlaces según tu preferencia */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+.grid-container{
+
+  display: grid;
+  gap: 10px;
+  grid-template: 
+  "header" 80px
+  "nav-bar" 50px
+  "main" auto
+  "sidebar" 50px
+  "footer" 50px
+}
+
+
+
+
+@media (min-width: 600px) and (max-width: 899px){
+    .grid-container{
+
+        display: grid;
+        gap: 10px;
+        grid-template: 
+        "header header" 80px
+        "nav-bar nav-bar" 50px
+        "sidebar main" auto
+        "footer footer" 50px / 200px auto;
+    }
+}
+@media (min-width:900px){
+    .grid-container{
+
+        display: grid;
+        gap: 10px;
+        grid-template: 
+        "header header header" 80px
+        "nav-bar main sidebar" auto
+        "footer footer footer" 100px / 200px auto 200px
+    }
+}
