@@ -205,6 +205,15 @@ background-image: url("/static/img/vision.gif");
   justify-content: center;
 
 }
+.grid-container{
+  background-image: url("/static/img/img2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+
+}
 
 
 /* Contenedor principal */
@@ -244,18 +253,42 @@ a:hover {
 
 
 
+
 .grid-container{
 
   display: grid;
   gap: 10px;
   grid-template: 
   "header" 80px
-  "nav-bar" 50px
   "main" auto
-  "sidebar" 50px
   "footer" 50px
 }
 
+.imagenesslider{
+  margin-left: 510px;
+  margin-right: auto;
+  margin-top: 80px;
+  display: flex;
+  width: 600px;
+  height: 430px;
+}
+.imagenesslider img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8; 
+  transition: .5s ease;
+  
+}
+.imagenesslider img:hover 
+{
+  width: 250px;
+  cursor: crosshair;
+  
+  
+  opacity: 1;
+  filter: contrast(120%);
+}
 
 
 
@@ -266,8 +299,7 @@ a:hover {
         gap: 10px;
         grid-template: 
         "header header" 80px
-        "nav-bar nav-bar" 50px
-        "sidebar main" auto
+        "main main" auto
         "footer footer" 50px / 200px auto;
     }
 }
@@ -278,7 +310,7 @@ a:hover {
         gap: 10px;
         grid-template: 
         "header header header" 80px
-        "nav-bar main sidebar" auto
+        "main main main" auto
         "footer footer footer" 100px / 200px auto 200px
     }
 }
