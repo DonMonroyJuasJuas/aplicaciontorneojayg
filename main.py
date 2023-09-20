@@ -8,6 +8,7 @@ import mysql.connector
 import uvicorn
 from funcion_conexion import *
 from funcion_insertar import *
+from funcion_seleclogin import funcionlogin
 templates = Jinja2Templates(directory="D:/servidorweb/static")
 app=APIRouter()#crear na instancia de fastapi
 
@@ -26,8 +27,17 @@ def formularioregistrar(request: Request,fn: str = Form(...), ap: str = Form(...
     print(pas)
     print("esta es la ruta registrarRR")
     insertar_variables_registro(fn,ap,em,pas)
-    return templates.TemplateResponse("/index.html",{"request":request})
+    return templates.TemplateResponse("/html/iniciodesesion.html",{"request":request})
   
+@app.post("/seleclogin")
+def form_login(request: Request,logemail: str=Form(...) ,logpass:str=Form(...)):
+    print(logemail)
+    print(logpass)
+    datos=funcionlogin(logemail)
+
+    return datos
+    print("RUTA SELEC LOGIN")
+
 
 if __name__=='__main__':
     print("metodo principal aqui inicia la ejecucion")
